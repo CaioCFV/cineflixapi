@@ -1,21 +1,37 @@
 'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-  },
+    up: (queryInterface, Sequelize) => {
+        return queryInterface.createTable('movie', {
+            id: {
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true
+            },
+            name: {
+                type: Sequelize.STRING(200),
+                allowNull: false,
+                unique: true
+            },
+            id_type: {
+              type: Sequelize.INTEGER,
+              references: {
+                  model: 'movie_type',
+                  key: 'id',
+                  deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE,
+                  onUpdate: 'CASCADE'
+              }
+          },
+          release_date: {
+            type: Sequelide.DATE,
+            allowNull: false
+          },
+          created_at: Sequelize.DATE,
+          updated_at: Sequelize.DATE,
+        });
+    },
 
-  down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
-  }
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.dropTable('movie');
+    }
 };
