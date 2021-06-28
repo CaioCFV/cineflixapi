@@ -23,4 +23,4 @@ class Movie extends Model {
 
 }
 
-module.exports = Curso;
+module.exports = Movie;

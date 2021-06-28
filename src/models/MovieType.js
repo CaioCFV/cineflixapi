@@ -16,9 +16,9 @@ class MovieType extends Model {
     }
 
     static associate(models) {
-        this.belongsToMany(models.Movie, { foreignKey: 'id_type', as: 'movie' });
+        this.hasMany(models.Movie, { foreignKey: 'id_type', as: 'movie' });
     }
 
 }
 
-module.exports = Aluno
+module.exports = MovieType
