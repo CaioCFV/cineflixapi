@@ -48,12 +48,3 @@ module.exports = {
         }
     }
 }
-
-// const m = await Acesso.findOne()
-// const b = await m.addModulo(1,{ through: { 
-//     criar: false,
-//     ler: false,
-//     atualizar: false,
-//     excluir:false
-// }});
-// console.log(m)
