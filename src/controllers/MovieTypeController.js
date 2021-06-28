@@ -12,11 +12,9 @@ module.exports = {
     },
     async store(req, res) {
         try {
-            const created = await Aluno.create(req.body)
-            console.log('certo', created)
-            return res.send(req.body)
+            const created = await MovieType.create(req.body)
+            return res.send({data: req.body, created})
         } catch (err) {
-            console.log('errado', err)
             res.status(400)
             return res.send(err)
         }
