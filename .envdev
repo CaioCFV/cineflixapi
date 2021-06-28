@@ -1,4 +1,4 @@
 DATABASE_URL=cineflix_database
 DB_USERNAME=cineflix
-DB_DATABASE=root
+DB_DATABASE=cineflixdb
 DB_PASSWORD=1234

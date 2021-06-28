@@ -1,10 +1,10 @@
 FROM node:alpine
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/cineflix
 
 COPY package*.json ./
 
-COPY init.sh /usr/src/app
+COPY init.sh /usr/src/cineflix
 
 COPY . .
 
