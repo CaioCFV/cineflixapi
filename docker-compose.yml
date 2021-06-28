@@ -3,33 +3,33 @@ version: "3"
 services: 
   cineflix:
     build: .
-    container_name: app
+    container_name: cineflix
     restart: always
     entrypoint: 'sh -c ./init.sh'
     ports: 
       - "5555:5555"
     volumes: 
-      - ./:/usr/src/app
+      - ./:/usr/src/cineflix
     networks:
-      - app-connect
+      - cineflix_connect
     environment: 
       DATABASE_URL: ${DATABASE_URL}
       DB_USERNAME: ${DB_USERNAME}
       DB_DATABASE: ${DB_DATABASE}
       DB_PASSWORD: ${DB_PASSWORD}
 
-  adminer:
+  cineflix_database_adm:
     image: adminer
-    container_name: adminer
+    container_name: cineflix_database_adm
     ports:
       - 8080:8080
     networks:
-      - app-connect
+      - cineflix_connect
 
-  pgsql:
+  cineflix_database:
     image: postgres
     restart: always
-    container_name: pgsql
+    container_name: cineflix_database
     environment: 
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
@@ -37,10 +37,10 @@ services:
     ports: 
       - "5432:5432"
     networks:
-      - app-connect
+      - cineflix_connect
       
 networks: 
-  app-connect:
+  cineflix_connect:
     driver: bridge
 
 
