@@ -10,15 +10,15 @@ module.exports = {
             return res.send(err);
         }
     },
-    // async store(req, res) {
-    //     try {
-    //         const created = await MovieType.create(req.body)
-    //         return res.send({data: req.body, created})
-    //     } catch (err) {
-    //         res.status(400)
-    //         return res.send(err)
-    //     }
-    // },
+    async store(req, res) {
+        try {
+            const created = await MovieType.create(req.body)
+            return res.send(created)
+        } catch (err) {
+            res.status(400)
+            return res.send(err)
+        }
+    },
     // async show(req, res) {
     //     try {
     //         const data = await Aluno.findByPk(req.params.id);

@@ -3,7 +3,7 @@ const routes = Router();
 
 //ROTAS PARA ACESSO
 const TypeController = require('./controllers/MovieTypeController');
-// routes.post('/movie/type', TypeController.store);
+routes.post('/movie/type', TypeController.store);
 routes.get('/movie/type', TypeController.index);
 // routes.get('/movie/type', TypeController.show);
 // routes.put('/movie/type', TypeController.update);
