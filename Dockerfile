@@ -8,4 +8,4 @@ COPY init.sh /usr/src/cineflix
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5555
