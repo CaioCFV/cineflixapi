@@ -4,19 +4,19 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('movie_type', [
       {
-        nome: "Terror"
+        name: "Terror"
       },
       {
-        nome: "Comédia"
+        name: "Comédia"
       },
       {
-        nome: "Drama"
+        name: "Drama"
       },
       {
-        nome: "Ficção científica"
+        name: "Ficção científica"
       },
       {
-        nome: "Suspense"
+        name: "Suspense"
       }
     ], {});
   },
