@@ -23,7 +23,7 @@ module.exports = {
               }
           },
           release_date: {
-            type: Sequelide.DATE,
+            type: Sequelize.DATE,
             allowNull: false
           },
           created_at: Sequelize.DATE,
