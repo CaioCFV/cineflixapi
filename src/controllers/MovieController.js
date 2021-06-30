@@ -19,15 +19,18 @@ module.exports = {
     //         return res.send(err)
     //     }
     // },
-    // async show(req, res) {
-    //     try {
-    //         const data = await Acesso.findByPk(req.params.id);
-    //         return res.send(data);
-    //     } catch (err) {
-    //         res.status(400);
-    //         return res.send(err);
-    //     }
-    // },
+    async show(req, res) {
+        try {
+            const data = await Movie.findByPk(req.params.id);
+            if(!data){
+                return res.status(404).send({error:"Movie not found"});
+            }
+            return res.send(data);
+        } catch (err) {
+            res.status(400);
+            return res.send(err);
+        }
+    },
     // async update(req, res) {
     //     try {
 
