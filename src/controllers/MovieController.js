@@ -31,16 +31,15 @@ module.exports = {
             return res.send(err);
         }
     },
-    // async update(req, res) {
-    //     try {
-
-    //         const data = await Aluno.update({...req.body }, { where: { id: req.params.id } });
-    //         return res.send(data);
-    //     } catch (err) {
-    //         res.status(400);
-    //         return res.send(err);
-    //     }
-    // },
+    async update(req, res) {
+        try {
+            const data = await Movie.update({...req.body }, { where: { id: req.params.id } });
+            return res.send(data);
+        } catch (err) {
+            res.status(400);
+            return res.send(err);
+        }
+    },
     // async destroy(req, res) {
     //     try {
     //         const data = await Aluno.findByPk(req.params.id);
