@@ -2,13 +2,13 @@ const Movie = require('../models/Movie');
 
 module.exports = {
     async index(req, res) {
-        // try {
-        //     const access = await Acesso.findAll()
-        //     return res.send(access);
-        // } catch (err) {
-        //     res.status(400)
-        //     return res.send(err)
-        // }
+        try {
+            const movies = await Movie.findAll()
+            return res.send(movies);
+        } catch (err) {
+            res.status(400)
+            return res.send(err)
+        }
     },
     // async store(req, res) {
     //     try {
