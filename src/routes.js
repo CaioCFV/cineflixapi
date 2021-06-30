@@ -6,7 +6,7 @@ const TypeController = require('./controllers/MovieTypeController');
 routes.post('/movie/type', TypeController.store);
 routes.get('/movie/type', TypeController.index);
 routes.get('/movie/type/:id', TypeController.show);
-// routes.put('/movie/type', TypeController.update);
+routes.put('/movie/type/:id', TypeController.update);
 // routes.delete('/movie/type', TypeController.destroy);
 
 //ROTAS PARA ANOLETIVO
