@@ -1,4 +1,4 @@
-const MovieType = require('../models/MovieType')
+const MovieType = require('../models/MovieType');
 
 module.exports = {
     async index(req, res) {
