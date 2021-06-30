@@ -40,13 +40,16 @@ module.exports = {
             return res.send(err);
         }
     },
-    // async destroy(req, res) {
-    //     try {
-    //         const data = await Aluno.findByPk(req.params.id);
-    //         data.destroy();
-    //         return res.send(data);
-    //     } catch (err) {
-    //         return res.send(err);
-    //     }
-    // }
+    async destroy(req, res) {
+        try {
+            const data = await Movie.findByPk(req.params.id);
+            if(!data){
+                return res.status(404).send({error:"Movie not found"});
+            }
+            data.destroy();
+            return res.send(data);
+        } catch (err) {
+            return res.send(err);
+        }
+    }
 }
