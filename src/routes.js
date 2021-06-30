@@ -11,7 +11,7 @@ routes.delete('/movie/type/:id', TypeController.destroy);
 
 //ROTAS PARA ANOLETIVO
 const MovieController = require('./controllers/MovieController');
-// routes.post('/movie', MovieController.store);
+routes.post('/movie', MovieController.store);
 routes.get('/movie', MovieController.index);
 routes.get('/movie/:id', MovieController.show);
 // routes.put('/movie/type', MovieController.update);

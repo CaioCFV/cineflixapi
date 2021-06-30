@@ -10,15 +10,15 @@ module.exports = {
             return res.send(err)
         }
     },
-    // async store(req, res) {
-    //     try {
-    //         const created = await Acesso.create(req.body)
-    //         return res.send(req.body)
-    //     } catch (err) {
-    //         res.status(400)
-    //         return res.send(err)
-    //     }
-    // },
+    async store(req, res) {
+        try {
+            const created = await Movie.create(req.body)
+            return res.send(created);
+        } catch (err) {
+            res.status(400)
+            return res.send(err);
+        }
+    },
     async show(req, res) {
         try {
             const data = await Movie.findByPk(req.params.id);
