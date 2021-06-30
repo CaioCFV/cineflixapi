@@ -15,6 +15,7 @@ module.exports = {
             },
             id_type: {
               type: Sequelize.INTEGER,
+              allowNull: false,
               references: {
                   model: 'movie_type',
                   key: 'id',
